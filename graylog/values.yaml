@@ -1,0 +1,16 @@
+tags:
+  install-mongodb: false
+  install-elasticsearch: false
+graylog:
+  mongodb:
+    uri: mongodb://mongodb-test.mongodb.svc.cluster.local:27017/graylog
+  elasticsearch:
+    version: 7
+    hosts: http://elasticsearch-test-es-default.elasticsearch.svc.cluster.local:9200
+  input:
+    tcp:
+      service:
+        type: ClusterIP
+      ports:
+        - name: gelf-tcp-input
+          port: 12201
